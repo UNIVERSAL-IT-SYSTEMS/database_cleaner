@@ -1,7 +1,10 @@
 require "rubygems"
 
-require "bundler"
-Bundler.setup
+begin
+  require "bundler"
+  Bundler.setup
+rescue LoadError, Bundler::GemfileNotFound
+end
 
 require 'rspec/core'
 require 'rspec/mocks'
